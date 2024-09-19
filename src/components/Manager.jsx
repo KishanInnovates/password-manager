@@ -47,7 +47,8 @@ export const Manager = () => {
           You own password manager.
         </p>
         <div className="text-black flex flex-col p-4 gap-4 items-center">
-          <input name="site"
+          <input
+            name="site"
             onChange={handleChange}
             value={form.site}
             type="text"
@@ -55,7 +56,8 @@ export const Manager = () => {
             placeholder="Enter website URL"
           />
           <div className="flex w-full justify-between gap-4">
-            <input name="username"
+            <input
+              name="username"
               onChange={handleChange}
               value={form.username}
               type="text"
@@ -63,7 +65,8 @@ export const Manager = () => {
               placeholder="Enter Username"
             />
             <div className="relative">
-              <input name="password"
+              <input
+                name="password"
                 onChange={handleChange}
                 value={form.password}
                 type="text"
@@ -95,6 +98,43 @@ export const Manager = () => {
             ></lord-icon>
             Add Password
           </button>
+        </div>
+        <div className="passwords">
+          <h2 className="font-bold text-2xl py-4">Your Passwords</h2>
+          {passwordArray.length === 0 && <div> No passwords to show!</div>}
+          {passwordArray.length != 0 && (
+            <table className="table-auto w-full overflow-hidden rounded-md">
+              <thead className="bg-[#436186] text-white">
+                <tr>
+                  <th className="py-2">Sit</th>
+                  <th className="py-2">Username</th>
+                  <th className="py-2">Password</th>
+                </tr>
+              </thead>
+              <tbody className="bg-gray-100">
+                {passwordArray.map((item, index) => {
+                  return (
+                    <tr key={index}>
+                      <td className="text-center py-2 border border-white w-32">
+                        <a href={item.site} target="_blank">
+                          {" "}
+                          {item.site}{" "}
+                        </a>
+                      </td>
+                      <td className="text-center py-2 border border-white w-32">
+                        {item.username}
+                      </td>
+                      <td className="text-center py-2 border border-white w-32">
+                        {item.password}
+                      </td>
+                    </tr>
+                  );
+                })}
+                
+                
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     </div>

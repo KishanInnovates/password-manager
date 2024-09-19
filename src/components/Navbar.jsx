@@ -9,7 +9,7 @@ export const Navbar = () => {
           <span className="text-[#1d2634]">Password</span>
           <span className="text-[#436186]">.Manager/&gt;</span>
         </div>
-        <ul>
+        {/* <ul>
           <li className="flex gap-4">
             <a href="#" className="hover:font-bold">
               Home
@@ -18,7 +18,21 @@ export const Navbar = () => {
               About
             </a>
           </li>
-        </ul>
+        </ul> */}
+        <div>
+          <a
+            href="https://github.com/KishanInnovates/password-manager"
+            target="_blank"
+          >
+            <img
+              className="invert p-1 w-12"
+              src="/github.png"
+              alt="github"
+              height={30}
+              width={30}
+            ></img>
+          </a>
+        </div>
       </div>
     </nav>
   );
