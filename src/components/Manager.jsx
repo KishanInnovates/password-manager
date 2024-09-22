@@ -3,7 +3,8 @@ import { useRef } from "react";
 
 export const Manager = () => {
 
-    const ref = useRef();
+  const ref = useRef();
+  const passwordRef = useRef();
     const [isEyeCrossed, setIsEyeCrossed] = useState(true);
     const [form, setForm] = useState({ site: "", username: "", password: "" });
     const [passwordArray, setpasswordArray] = useState([]);
@@ -16,11 +17,14 @@ export const Manager = () => {
     }, [])
     
 
-    const showPassword = () => {
+  const showPassword = () => {
+      passwordRef.current.type = "text"
         if (isEyeCrossed) {
-            ref.current.src = "/eye.png";
+          ref.current.src = "/show.png";
+          passwordRef.current.type = "text";
         } else {
-            ref.current.src = "/eyecross.jpg"
+          ref.current.src = "/hide.png"
+          passwordRef.current.type = "password";
         }
         setIsEyeCrossed(!isEyeCrossed);
     };
@@ -66,10 +70,11 @@ export const Manager = () => {
             />
             <div className="relative">
               <input
+                ref={passwordRef}
                 name="password"
                 onChange={handleChange}
                 value={form.password}
-                type="text"
+                type="password"
                 className=" rounded-full border border-[#436186] w-full text-black p-4 py-1"
                 placeholder="Enter Password"
               />
@@ -79,9 +84,9 @@ export const Manager = () => {
               >
                 <img
                   ref={ref}
-                  className="p-2 "
+                  className="p-2 py-1"
                   width={38}
-                  src="/eyecross.jpg"
+                  src="/show.png"
                   alt="eye"
                 />
               </span>

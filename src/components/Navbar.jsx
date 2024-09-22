@@ -25,7 +25,7 @@ export const Navbar = () => {
             target="_blank"
           >
             <img
-              className="invert p-1 w-12"
+              className="p-1 w-12"
               src="/github.png"
               alt="github"
               height={30}
