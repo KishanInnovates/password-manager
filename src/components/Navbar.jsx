@@ -26,7 +26,7 @@ export const Navbar = () => {
           >
             <img
               className="p-1 w-12"
-              src="/github.png"
+              src="/password-manager/github.png"
               alt="github"
               height={30}
               width={30}

@@ -34,10 +34,10 @@ export const Manager = () => {
   const showPassword = () => {
     passwordRef.current.type = "text";
     if (isEyeCrossed) {
-      ref.current.src = "/show.png";
+      ref.current.src = "/password-manager/show.png";
       passwordRef.current.type = "text";
     } else {
-      ref.current.src = "/hide.png";
+      ref.current.src = "/password-manager/hide.png";
       passwordRef.current.type = "password";
     }
     setIsEyeCrossed(!isEyeCrossed);
@@ -163,7 +163,7 @@ export const Manager = () => {
                   ref={ref}
                   className="p-2 py-1"
                   width={38}
-                  src="/show.png"
+                  src="/password-manager/show.png"
                   alt="eye"
                 />
               </span>
